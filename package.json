@@ -1,0 +1,15 @@
+{
+  "name": "webflow-quiz",
+  "version": "1.0.0",
+  "description": "This script is designed to handle quiz functionality within a Webflow CMS. It loads jQuery asynchronously, then defines functions to handle quiz interaction and submission.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.12.0"
+  }
+}
