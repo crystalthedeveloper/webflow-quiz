@@ -1,14 +1,16 @@
 # webflow-quiz
-This script is designed to handle quiz functionality within a Webflow CMS. It loads jQuery asynchronously, then defines functions to handle quiz interaction and submission.
+This code dynamically loads jQuery from a CDN (Content Delivery Network), sets up event handlers for a quiz form, and handles the submission of answers. Here's a brief description:
 
-Here's a brief description of what the code does:
+Loading jQuery: It creates a script element dynamically and sets its source to the jQuery library hosted on the Google CDN. When the script is loaded, it initializes jQuery in noConflict mode, ensuring it doesn't conflict with any existing global variables named $.
 
-Loading jQuery: It creates a script element to load jQuery asynchronously from the Google CDN. Once jQuery is loaded, it's assigned to the variable $ using $.noConflict(true) to avoid conflicts with other libraries.
+Document Ready: It waits for the document to be fully loaded before executing any jQuery code to ensure that all elements are accessible.
 
-Event Handlers: It sets up event handlers for quiz items and the submit button. When a user clicks on a true/false option, the selected option is visually highlighted. When the submit button is clicked, it checks if an option is selected, marks it as submitted, disables further clicks on options, and logs the total number of questions and answered questions.
+Getting Collection Item ID: It defines a function to retrieve the collection item ID from the current page's HTML, assuming it's stored as a data attribute.
 
-Handling Answers: It checks if the selected answer is correct or incorrect and updates the visual representation accordingly. If all questions are answered, it displays a message indicating quiz completion and attempts to save the course ID to the user's account.
+Event Handlers for Quiz Items: It sets up event handlers for quiz items, such as true/false options. When a user clicks on an option, it updates the visual state by adding or removing classes.
 
-Saving Course ID: It defines an asynchronous function to save the course ID to the user's account. It makes a GET request to fetch the user's account details, checks if the course ID is not already completed, updates the user's account with the new course ID, and handles errors appropriately.
+Event Handler for Submit Button: It sets up an event handler for the submit button. When clicked, it checks if an answer has been submitted and if either the true or false option has been selected. If so, it marks the answer as submitted and performs various actions based on whether the answer is correct or incorrect.
 
-Overall, this script enhances the interactivity of quizzes in a Webflow CMS environment, ensuring users can interact with quiz items and their progress is tracked and saved accurately.
+Handling Answers: It iterates over the quiz items, checking each answer's correctness and updating the visual state accordingly. If all questions are answered, it reveals the pass-wrap element after a 2-second delay and hides navigation elements.
+
+Appending Script: Finally, it appends the dynamically created script element to the head of the document, triggering the loading and execution of jQuery and the associated code.
